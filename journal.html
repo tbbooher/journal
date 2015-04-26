@@ -1,0 +1,383 @@
+<head>
+    <title>Todo List</title>
+</head>
+
+<body role="document">
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Bootstrap theme</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+
+<div class="container theme-showcase" role="main">
+
+    <div class="page-header">
+        <h1>Todo List</h1>
+    </div>
+
+    {{> form}}
+
+    <ul>
+        {{#each entries}}
+        {{> task}}
+        {{/each}}
+    </ul>
+
+</div>
+<!-- /container -->
+
+</body>
+
+<template name="task">
+    <li>{{text}}</li>
+</template>
+
+<template name="form">
+    <form accept-charset="UTF-8" action="/journal_entries" class="simple_form form-horizontal" id="journal_entry_form" method="post" novalidate="novalidate">
+        <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input
+                name="authenticity_token" type="hidden" value="9BwMx291ILx8aal/VCwcvxY+OwcEt3eKgtmYnkPX1jU="></div>
+        <div class="control-group date optional journal_entry_entry_date"><label class="date optional control-label"
+                                                                                 for="journal_entry_entry_date_1i">Entry
+            date</label>
+
+            <div class="controls"><select class="date optional" id="journal_entry_entry_date_1i"
+                                          name="journal_entry[entry_date(1i)]">
+                <option value="2010">2010</option>
+                <option value="2011">2011</option>
+                <option value="2012">2012</option>
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option selected="selected" value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+            </select>
+                <select class="date optional" id="journal_entry_entry_date_2i" name="journal_entry[entry_date(2i)]">
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option selected="selected" value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+                <select class="date optional" id="journal_entry_entry_date_3i" name="journal_entry[entry_date(3i)]">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option selected="selected" value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>
+
+                <p class="help-block"></p></div>
+        </div>
+        <div class="control-group text optional journal_entry_description"><label class="text optional control-label"
+                                                                                  for="journal_entry_description">Description</label>
+
+            <div class="controls"><textarea class="text optional" cols="40" id="journal_entry_description"
+                                            name="journal_entry[description]" rows="20"></textarea></div>
+        </div>
+        <div class="control-group text optional">
+            <label class="text optional control-label" for="journal_entry_description">Next Action Lists</label>
+
+            <div class="controls">
+                <ul class="nav nav-pills" id="tab">
+                    <li class="active">
+                        <a data-toggle="pill" href="#work">At Work</a>
+                    </li>
+                    <li>
+                        <a data-toggle="pill" href="#home">At Home</a>
+                    </li>
+                    <li>
+                        <a data-toggle="pill" href="#home_pc">At Home PC</a>
+                    </li>
+                    <li>
+                        <a data-toggle="pill" href="#someday_maybe">Someday/Maybe</a>
+                    </li>
+                    <li>
+                        <a data-toggle="pill" href="#blog_post_ideas">Blog Ideas</a>
+                    </li>
+                    <li>
+                        <a data-toggle="pill" href="#friends">Friends</a>
+                    </li>
+                    <li>
+                        <a data-toggle="pill" href="#networking">Networking</a>
+                    </li>
+                    <li>
+                        <a data-toggle="pill" href="#consulting">Consulting</a>
+                    </li>
+                    <li>
+                        <a data-toggle="pill" href="#to_read">To Read</a>
+                    </li>
+                    <li>
+                        <a data-toggle="pill" href="#goals">Goals</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="work">
+    <textarea class="text optional" cols="40" id="journal_entry_at_work" name="journal_entry[at_work]" rows="20"
+              style="height:500px">
+    </textarea>
+                    </div>
+                    <div class="tab-pane" id="home">
+    <textarea class="text optional" cols="40" id="journal_entry_at_home" name="journal_entry[at_home]" rows="20"
+              style="height:500px">
+    </textarea>
+                    </div>
+                    <div class="tab-pane" id="home_pc">
+    <textarea class="text optional" cols="40" id="journal_entry_at_home_pc" name="journal_entry[at_home_pc]" rows="20"
+              style="height:500px">
+    </textarea>
+                    </div>
+                    <div class="tab-pane" id="someday_maybe">
+    <textarea class="text optional" cols="40" id="journal_entry_someday_maybe" name="journal_entry[someday_maybe]" rows="20"
+              style="height:500px">
+    </textarea>
+                    </div>
+                    <div class="tab-pane" id="blog_post_ideas">
+    <textarea class="text optional" cols="40" id="journal_entry_blog_post_ideas" name="journal_entry[blog_post_ideas]"
+              rows="20" style="height:500px">
+    </textarea>
+                    </div>
+                    <div class="tab-pane" id="friends">
+    <textarea class="text optional" cols="40" id="journal_entry_friends" name="journal_entry[friends]" rows="20"
+              style="height:500px">
+    </textarea>
+                    </div>
+                    <div class="tab-pane" id="networking">
+    <textarea class="text optional" cols="40" id="journal_entry_networking" name="journal_entry[networking]" rows="20"
+              style="height:500px">
+    </textarea>
+                    </div>
+                    <div class="tab-pane" id="consulting">
+    <textarea class="text optional" cols="40" id="journal_entry_consulting" name="journal_entry[consulting]" rows="20"
+              style="height:500px">
+
+                    </div>
+                    <div class="tab-pane" id="to_read">
+    <textarea class="text optional" cols="40" id="journal_entry_to_read" name="journal_entry[to_read]" rows="20"
+              style="height:500px">
+    </textarea>
+                    </div>
+                    <div class="tab-pane" id="goals">
+    <textarea class="text optional" cols="40" id="journal_entry_goals" name="journal_entry[goals]" rows="20"
+              style="height:500px">
+
+    </textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="control-group text optional journal_entry_memory_verse"><label class="text optional control-label"
+                                                                                   for="journal_entry_memory_verse">Memory
+            verse</label>
+
+            <div class="controls"><textarea class="text optional" cols="40" id="journal_entry_memory_verse"
+                                            name="journal_entry[memory_verse]" rows="20">Eph 3:20-21 Now to him who is able to do immeasurably more than all we ask or imagine, according to his power that is at work within us, to him be glory in the church and in Christ Jesus throughout all generations, for ever and ever! </textarea>
+            </div>
+        </div>
+        <div class="control-group range optional journal_entry_purity"><label class="range optional control-label"
+                                                                              for="journal_entry_purity">Purity (high is
+            pure)</label>
+
+            <div class="controls"><input class="numeric range optional" id="journal_entry_purity" max="5" min="1"
+                                         name="journal_entry[purity]" step="0.25" type="range"></div>
+        </div>
+        <div class="control-group range optional journal_entry_fitness"><label class="range optional control-label"
+                                                                               for="journal_entry_fitness">Fitness</label>
+
+            <div class="controls"><input class="numeric range optional" id="journal_entry_fitness" max="5" min="1"
+                                         name="journal_entry[fitness]" step="0.25" type="range"></div>
+        </div>
+        <div class="control-group range optional journal_entry_devotional"><label class="range optional control-label"
+                                                                                  for="journal_entry_devotional">Devotional</label>
+
+            <div class="controls"><input class="numeric range optional" id="journal_entry_devotional" max="5" min="1"
+                                         name="journal_entry[devotional]" step="0.25" type="range"></div>
+        </div>
+        <div class="control-group range optional journal_entry_chrissy"><label class="range optional control-label"
+                                                                               for="journal_entry_chrissy">Chrissy</label>
+
+            <div class="controls"><input class="numeric range optional" id="journal_entry_chrissy" max="5" min="1"
+                                         name="journal_entry[chrissy]" step="0.25" type="range"></div>
+        </div>
+        <div class="control-group range optional journal_entry_relational"><label class="range optional control-label"
+                                                                                  for="journal_entry_relational">Relational</label>
+
+            <div class="controls"><input class="numeric range optional" id="journal_entry_relational" max="5" min="1"
+                                         name="journal_entry[relational]" step="0.25" type="range"></div>
+        </div>
+        <div class="control-group range optional journal_entry_discipline"><label class="range optional control-label"
+                                                                                  for="journal_entry_discipline">Discipline</label>
+
+            <div class="controls"><input class="numeric range optional" id="journal_entry_discipline" max="5" min="1"
+                                         name="journal_entry[discipline]" step="0.25" type="range"></div>
+        </div>
+        <div class="control-group range optional journal_entry_stress"><label class="range optional control-label"
+                                                                              for="journal_entry_stress">Stress</label>
+
+            <div class="controls"><input class="numeric range optional" id="journal_entry_stress" max="5" min="1"
+                                         name="journal_entry[stress]" step="0.25" type="range"></div>
+        </div>
+        <div class="control-group range optional journal_entry_facepicking"><label class="range optional control-label"
+                                                                                   for="journal_entry_facepicking">Facepicking
+            (high is good)</label>
+
+            <div class="controls"><input class="numeric range optional" id="journal_entry_facepicking" max="5" min="1"
+                                         name="journal_entry[facepicking]" step="0.25" type="range"></div>
+        </div>
+        <div class="control-group string optional journal_entry_friends_in_focus"><label
+                class="string optional control-label" for="journal_entry_friends_in_focus">Friends in focus</label>
+
+            <div class="controls"><input class="string optional" id="journal_entry_friends_in_focus"
+                                         name="journal_entry[friends_in_focus]" size="50" type="text"></div>
+        </div>
+        <div class="control-group string optional journal_entry_health_statement"><label
+                class="string optional control-label" for="journal_entry_health_statement">Health statement</label>
+
+            <div class="controls"><input class="string optional" id="journal_entry_health_statement"
+                                         name="journal_entry[health_statement]" size="50" style="width:80%;" type="text">
+            </div>
+        </div>
+        <div class="control-group boolean optional journal_entry_lack_of_discipline"><label
+                class="boolean optional control-label" for="journal_entry_lack_of_discipline">Lack of discipline</label>
+
+            <div class="controls"><input name="journal_entry[lack_of_discipline]" type="hidden" value="0"><label
+                    class="checkbox"><input class="boolean optional" id="journal_entry_lack_of_discipline"
+                                            name="journal_entry[lack_of_discipline]" type="checkbox" value="1"></label>
+            </div>
+        </div>
+        <div class="control-group boolean optional journal_entry_sick"><label class="boolean optional control-label"
+                                                                              for="journal_entry_sick">Sick</label>
+
+            <div class="controls"><input name="journal_entry[sick]" type="hidden" value="0"><label class="checkbox"><input
+                    class="boolean optional" id="journal_entry_sick" name="journal_entry[sick]" type="checkbox"
+                    value="1"></label></div>
+        </div>
+        <div class="control-group boolean optional journal_entry_flossed"><label class="boolean optional control-label"
+                                                                                 for="journal_entry_flossed">Flossed</label>
+
+            <div class="controls"><input name="journal_entry[flossed]" type="hidden" value="0"><label
+                    class="checkbox"><input class="boolean optional" id="journal_entry_flossed"
+                                            name="journal_entry[flossed]" type="checkbox" value="1"></label></div>
+        </div>
+        <div class="control-group boolean optional journal_entry_workout"><label class="boolean optional control-label"
+                                                                                 for="journal_entry_workout">Workout</label>
+
+            <div class="controls"><input name="journal_entry[workout]" type="hidden" value="0"><label
+                    class="checkbox"><input class="boolean optional" id="journal_entry_workout"
+                                            name="journal_entry[workout]" type="checkbox" value="1"></label></div>
+        </div>
+        <div class="control-group boolean optional journal_entry_problem_attempted"><label
+                class="boolean optional control-label" for="journal_entry_problem_attempted">Problem attempted</label>
+
+            <div class="controls"><input name="journal_entry[problem_attempted]" type="hidden" value="0"><label
+                    class="checkbox"><input class="boolean optional" id="journal_entry_problem_attempted"
+                                            name="journal_entry[problem_attempted]" type="checkbox" value="1"></label></div>
+        </div>
+        <div class="control-group boolean optional journal_entry_problem_solved"><label
+                class="boolean optional control-label" for="journal_entry_problem_solved">Problem solved</label>
+
+            <div class="controls"><input name="journal_entry[problem_solved]" type="hidden" value="0"><label
+                    class="checkbox"><input class="boolean optional" id="journal_entry_problem_solved"
+                                            name="journal_entry[problem_solved]" type="checkbox" value="1"></label></div>
+        </div>
+        <div class="control-group text optional journal_entry_workout_done"><label class="text optional control-label"
+                                                                                   for="journal_entry_workout_done">Workout
+            done</label>
+
+            <div class="controls"><textarea class="text optional" cols="40" id="journal_entry_workout_done"
+                                            name="journal_entry[workout_done]" rows="20" style="height:100px;"></textarea>
+            </div>
+        </div>
+        <div class="control-group text optional">
+            <label class="text optional control-label" for="journal_entry_description">Exercises</label>
+
+            <div class="controls">
+                <p>
+                    <a href="#" class="add_fields btn"
+                       data-fields="<fieldset style='padding-bottom:10px;'><input autocomplete=&quot;off&quot; class=&quot;string optional&quot; data-provide=&quot;typeahead&quot; data-source=&quot;[&amp;quot;Push Jerk&amp;quot;,&amp;quot;Box Jumps (24 inch box)&amp;quot;,&amp;quot;Wallballs (20 lb, 10 ft target)&amp;quot;,&amp;quot;Situps (with abmat)&amp;quot;,&amp;quot;Run&amp;quot;,&amp;quot;Snatch Classic&amp;quot;,&amp;quot;CrossFit Warmup&amp;quot;,&amp;quot;Overhead Squat&amp;quot;,&amp;quot;Push Press&amp;quot;,&amp;quot;Sumo Deadlift High Pull&amp;quot;,&amp;quot;Split Jerk&amp;quot;,&amp;quot;Back Squat&amp;quot;,&amp;quot;Burpees&amp;quot;,&amp;quot;Walking Lunges&amp;quot;,&amp;quot;Bear Crawl&amp;quot;,&amp;quot;Squat Jumps&amp;quot;,&amp;quot;Strict Press&amp;quot;,&amp;quot;Box Jumps (30-inch box)&amp;quot;,&amp;quot;Russian Twists&amp;quot;,&amp;quot;Tuck Jumps&amp;quot;,&amp;quot;Slam Balls&amp;quot;,&amp;quot;Slamball Situps&amp;quot;,&amp;quot;Row&amp;quot;,&amp;quot;Bench Press&amp;quot;,&amp;quot;Climbing&amp;quot;]&quot; id=&quot;journal_entry_exertions_attributes_70062427541980_exercise_name&quot; label=&quot;Exercise&quot; name=&quot;journal_entry[exertions_attributes][70062427541980][exercise_name]&quot; size=&quot;50&quot; type=&quot;text&quot; /><input class=&quot;numeric decimal optional span2&quot; id=&quot;journal_entry_exertions_attributes_70062427541980_weight&quot; name=&quot;journal_entry[exertions_attributes][70062427541980][weight]&quot; placeholder=&quot;weight&quot; type=&quot;text&quot; /><input class=&quot;numeric integer optional span2&quot; id=&quot;journal_entry_exertions_attributes_70062427541980_reps&quot; name=&quot;journal_entry[exertions_attributes][70062427541980][reps]&quot; placeholder=&quot;reps&quot; type=&quot;text&quot; /><input class=&quot;string optional span2&quot; id=&quot;journal_entry_exertions_attributes_70062427541980_duration&quot; name=&quot;journal_entry[exertions_attributes][70062427541980][duration]&quot; placeholder=&quot;time&quot; size=&quot;50&quot; type=&quot;text&quot; value=&quot;00:00:00&quot; /><input class=&quot;numeric decimal optional span2&quot; id=&quot;journal_entry_exertions_attributes_70062427541980_distance&quot; name=&quot;journal_entry[exertions_attributes][70062427541980][distance]&quot; placeholder=&quot;distance&quot; type=&quot;text&quot; /><input class=&quot;hidden&quot; id=&quot;journal_entry_exertions_attributes_70062427541980__destroy&quot; name=&quot;journal_entry[exertions_attributes][70062427541980][_destroy]&quot; type=&quot;hidden&quot; value=&quot;false&quot; /><a href=&quot;#&quot; class=&quot;remove_fields btn&quot;>remove</a></fieldset>"
+                       data-id="70062427541980">Add exercise</a>
+                </p>
+            </div>
+        </div>
+        <div class="control-group text optional journal_entry_problem_of_the_day"><label class="text optional control-label"
+                                                                                         for="journal_entry_problem_of_the_day">Technical
+            Work Done</label>
+
+            <div class="controls"><textarea class="text optional" cols="40" id="journal_entry_problem_of_the_day"
+                                            name="journal_entry[problem_of_the_day]" rows="20"
+                                            style="height:100px;"></textarea></div>
+        </div>
+        <div class="form-actions">
+            <input class="btn btn btn-primary" name="commit" type="submit" value="Create Journal entry">
+            <input class="btn btn" id="update-button" name="commit" type="button" value="save">
+            <a href="/journal_entries" class="btn">Cancel</a>
+        </div>
+    </form>
+</template>
