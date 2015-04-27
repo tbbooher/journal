@@ -1,26 +1,95 @@
-[<input name=​"utf8" type=​"hidden" value=​"✓">​,
-<input name=​"authenticity_token" type=​"hidden" value=​"9BwMx291ILx8aal/​VCwcvxY+OwcEt3eKgtmYnkPX1jU=">​,
-<input class=​"numeric range optional" id=​"journal_entry_purity" max=​"5" min=​"1" name=​"journal_entry[purity]​" step=​"0.25" type=​"range">​,
-<input class=​"numeric range optional" id=​"journal_entry_fitness" max=​"5" min=​"1" name=​"journal_entry[fitness]​" step=​"0.25" type=​"range">​,
-<input class=​"numeric range optional" id=​"journal_entry_devotional" max=​"5" min=​"1" name=​"journal_entry[devotional]​" step=​"0.25" type=​"range">​,
-<input class=​"numeric range optional" id=​"journal_entry_chrissy" max=​"5" min=​"1" name=​"journal_entry[chrissy]​" step=​"0.25" type=​"range">​,
-<input class=​"numeric range optional" id=​"journal_entry_relational" max=​"5" min=​"1" name=​"journal_entry[relational]​" step=​"0.25" type=​"range">​,
-<input class=​"numeric range optional" id=​"journal_entry_discipline" max=​"5" min=​"1" name=​"journal_entry[discipline]​" step=​"0.25" type=​"range">​,
-<input class=​"numeric range optional" id=​"journal_entry_stress" max=​"5" min=​"1" name=​"journal_entry[stress]​" step=​"0.25" type=​"range">​,
-<input class=​"numeric range optional" id=​"journal_entry_facepicking" max=​"5" min=​"1" name=​"journal_entry[facepicking]​" step=​"0.25" type=​"range">​,
-<input class=​"string optional" id=​"journal_entry_friends_in_focus" name=​"journal_entry[friends_in_focus]​" size=​"50" type=​"text">​,
-<input class=​"string optional" id=​"journal_entry_health_statement" name=​"journal_entry[health_statement]​" size=​"50" style=​"width:​80%;​" type=​"text">​,
-<input name=​"journal_entry[lack_of_discipline]​" type=​"hidden" value=​"0">​,
-<input class=​"boolean optional" id=​"journal_entry_lack_of_discipline" name=​"journal_entry[lack_of_discipline]​" type=​"checkbox" value=​"1">​,
-<input name=​"journal_entry[sick]​" type=​"hidden" value=​"0">​,
-<input class=​"boolean optional" id=​"journal_entry_sick" name=​"journal_entry[sick]​" type=​"checkbox" value=​"1">​,
-<input name=​"journal_entry[flossed]​" type=​"hidden" value=​"0">​,
-<input class=​"boolean optional" id=​"journal_entry_flossed" name=​"journal_entry[flossed]​" type=​"checkbox" value=​"1">​,
-<input name=​"journal_entry[workout]​" type=​"hidden" value=​"0">​,
-<input class=​"boolean optional" id=​"journal_entry_workout" name=​"journal_entry[workout]​" type=​"checkbox" value=​"1">​,
-<input name=​"journal_entry[problem_attempted]​" type=​"hidden" value=​"0">​,
-<input class=​"boolean optional" id=​"journal_entry_problem_attempted" name=​"journal_entry[problem_attempted]​" type=​"checkbox" value=​"1">​,
-<input name=​"journal_entry[problem_solved]​" type=​"hidden" value=​"0">​,
-<input class=​"boolean optional" id=​"journal_entry_problem_solved" name=​"journal_entry[problem_solved]​" type=​"checkbox" value=​"1">​,
-<input class=​"btn btn btn-primary" name=​"commit" type=​"submit" value=​"Create Journal entry">​,
-<input class=​"btn btn" id=​"update-button" name=​"commit" type=​"button" value=​"save">​]
+
+
+form
+
+
+
+friends_in_focus
+
+friends_in_focus
+name="journal_entry[friends_in_focus]" size="50" type="text"></div>
+</div>
+health_statement
+health_statement
+
+health_statement
+name="journal_entry[health_statement]" size="50" style="width:80%;" type="text">
+</div>
+</div>
+lack_of_discipline
+lack_of_discipline
+
+<div class="controls"><input name="journal_entry[lack_of_discipline]" type="hidden" value="0"><label
+lack_of_discipline
+name="journal_entry[lack_of_discipline]" type="checkbox" value="1"></label>
+</div>
+</div>
+sick
+sick
+
+<div class="controls"><input name="journal_entry[sick]" type="hidden" value="0"><label class="checkbox"><input
+sick
+value="1"></label></div>
+</div>
+flossed
+flossed
+
+<div class="controls"><input name="journal_entry[flossed]" type="hidden" value="0"><label
+flossed
+name="journal_entry[flossed]" type="checkbox" value="1"></label></div>
+</div>
+workout
+workout
+
+<div class="controls"><input name="journal_entry[workout]" type="hidden" value="0"><label
+workout
+name="journal_entry[workout]" type="checkbox" value="1"></label></div>
+</div>
+problem_attempted
+problem_attempted
+
+<div class="controls"><input name="journal_entry[problem_attempted]" type="hidden" value="0"><label
+problem_attempted
+name="journal_entry[problem_attempted]" type="checkbox" value="1"></label></div>
+</div>
+problem_solved
+problem_solved
+
+<div class="controls"><input name="journal_entry[problem_solved]" type="hidden" value="0"><label
+problem_solved
+name="journal_entry[problem_solved]" type="checkbox" value="1"></label></div>
+</div>
+workout_done
+workout_done
+done</label>
+
+workout_done
+name="journal_entry[workout_done]" rows="20" style="height:100px;"></textarea>
+</div>
+</div>
+<div class="control-group text optional">
+description
+
+<div class="controls">
+<p>
+<a href="#" class="add_fields btn"
+exertions_attributes_70062427541980__destroy&quot; name=&quot;journal_entry[exertions_attributes][70062427541980][_destroy]&quot; type=&quot;hidden&quot; value=&quot;false&quot; /><a href=&quot;#&quot; class=&quot;remove_fields btn&quot;>remove</a></fieldset>
+data-id="70062427541980">Add exercise</a>
+</p>
+</div>
+</div>
+problem_of_the_day
+problem_of_the_day
+Work Done</label>
+
+problem_of_the_day
+name="journal_entry[problem_of_the_day]" rows="20"
+style="height:100px;"></textarea></div>
+</div>
+<div class="form-actions">
+<input class="btn btn btn-primary" name="commit" type="submit" value="Create Journal entry">
+<input class="btn btn" id="update-button" name="commit" type="button" value="save">
+<a href="/journal_entries" class="btn">Cancel</a>
+</div>
+</form>
+</template>

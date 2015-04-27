@@ -3,16 +3,45 @@ Entries = new (Mongo.Collection)('entries')
 
 if Meteor.isClient
   # This code only runs on the client
+  Template.body.rendered = ->
+    $('#entry_date').datepicker()
+    return
   Template.body.helpers entries: ->
     # Show newest entries first
     Entries.find {}, sort: createdAt: -1
-  Template.body.events 'submit .new-task': (event) ->
+  Template.body.events 'submit #journal_entry_form': (event) ->
     # This function is called when the new task form is submitted
-    text = event.target.text.value
     Entries.insert
-      text: text
-      createdAt: new Date
-    # Clear form
-    event.target.text.value = ''
+      entry_date: event.target.entry_date.value
+      description: event.target.description.value
+      at_work: event.target.at_work.value
+      at_home: event.target.at_home.value
+      at_home_pc: event.target.at_home_pc.value
+      someday_maybe: event.target.someday_maybe.value
+      blog_post_ideas: event.target.blog_post_ideas.value
+      friends: event.target.friends.value
+      networking: event.target.networking.value
+      consulting: event.target.consulting.value
+      to_read: event.target.to_read.value
+      goals: event.target.goals.value
+      memory_verse: event.target.memory_verse.value
+      purity: event.target.purity.value
+      fitness: event.target.fitness.value
+      devotional: event.target.devotional.value
+      chrissy: event.target.chrissy.value
+      relational: event.target.relational.value
+      discipline: event.target.discipline.value
+      stress: event.target.stress.value
+      facepicking: event.target.facepicking.value
+      friends_in_focus: event.target.friends_in_focus.value
+      health_statement: event.target.health_statement.value
+      lack_of_discipline: event.target.lack_of_discipline.value
+      sick: event.target.sick.value
+      flossed: event.target.flossed.value
+      workout: event.target.workout.value
+      problem_attempted: event.target.problem_attempted.value
+      problem_solved: event.target.problem_solved.value
+    # now, lets clear out values
+    event.target.description.value = ''
     # Prevent default form submit
     false
