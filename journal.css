@@ -5,3 +5,7 @@ body {
 textarea {
     width: 100%;
 }
+
+.login-display-name {
+    color: white;
+}

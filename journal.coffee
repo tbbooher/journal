@@ -28,11 +28,11 @@ if Meteor.isClient
       purity: event.target.purity.value
       fitness: event.target.fitness.value
       devotional: event.target.devotional.value
-      chrissy: event.target.chrissy.value
+      wife: event.target.wife.value
       relational: event.target.relational.value
       discipline: event.target.discipline.value
       stress: event.target.stress.value
-      facepicking: event.target.facepicking.value
+      #facepicking: event.target.facepicking.value
       friends_in_focus: event.target.friends_in_focus.value
       health_statement: event.target.health_statement.value
       lack_of_discipline: event.target.lack_of_discipline.value
