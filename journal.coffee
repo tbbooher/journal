@@ -11,23 +11,23 @@ Router.route '/analysis', ->
 
 if Meteor.isClient
   # This code only runs on the client
-  Template.body.rendered = ->
+  Template.form.rendered = ->
     $('#entry_date').datepicker()
     return
-  Template.body.helpers entries: ->
+  Template.entries.helpers entries: ->
     # Show newest entries first
     Entries.find {owner: Meteor.userId()}, sort: createdAt: -1
-  Template.body.events 'submit #journal_entry_form': (event) ->
+  Template.form.events 'submit #journal_entry_form': (event) ->
     # This function is called when the new task form is submitted
     Entries.insert
       owner: Meteor.userId()
       entry_date: event.target.entry_date.value
       description: event.target.description.value
-      at_work: event.target.at_work.value
-      at_home: event.target.at_home.value
-      at_home_pc: event.target.at_home_pc.value
-      someday_maybe: event.target.someday_maybe.value
-      blog_post_ideas: event.target.blog_post_ideas.value
+#      at_work: event.target.at_work.value
+#      at_home: event.target.at_home.value
+#      at_home_pc: event.target.at_home_pc.value
+#      someday_maybe: event.target.someday_maybe.value
+#      blog_post_ideas: event.target.blog_post_ideas.value
       friends: event.target.friends.value
       networking: event.target.networking.value
       consulting: event.target.consulting.value
