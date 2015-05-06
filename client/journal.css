@@ -1,0 +1,11 @@
+body {
+  padding-top: 60px;
+}
+
+textarea {
+    width: 100%;
+}
+
+.login-display-name {
+    color: white;
+}

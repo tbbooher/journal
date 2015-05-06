@@ -1,0 +1,29 @@
+<template name="entries">
+    <div class="col-md-6">
+        <div class="page-header">
+            <h1>Journal Entries</h1>
+        </div>
+        {{#if currentUser}}
+            {{> form}}
+        {{else}}
+            <p>Please log-in to post a journal entry.</p>
+        {{/if}}
+    </div>
+    <div class="col-md-6">
+
+        <div class="page-header">
+            <h1>Entries</h1>
+        </div>
+        {{#if currentUser}}
+            <ul>
+                {{#each entries}}
+                    {{> entry}}
+                {{/each}}
+            </ul>
+        {{else}}
+            <p>
+                Please login to see your entries.
+            </p>
+        {{/if}}
+    </div>
+</template>
