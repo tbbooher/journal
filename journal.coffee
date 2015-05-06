@@ -8,10 +8,11 @@ if Meteor.isClient
     return
   Template.body.helpers entries: ->
     # Show newest entries first
-    Entries.find {}, sort: createdAt: -1
+    Entries.find {owner: Meteor.userId()}, sort: createdAt: -1
   Template.body.events 'submit #journal_entry_form': (event) ->
     # This function is called when the new task form is submitted
     Entries.insert
+      owner: Meteor.userId()
       entry_date: event.target.entry_date.value
       description: event.target.description.value
       at_work: event.target.at_work.value
