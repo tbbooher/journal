@@ -1,6 +1,14 @@
 #Tasks = new (Mongo.Collection)('tasks')
 Entries = new (Mongo.Collection)('entries')
 
+Router.route '/', ->
+  @render 'entries'
+  return
+
+Router.route '/analysis', ->
+  @render 'Analysis'
+  return
+
 if Meteor.isClient
   # This code only runs on the client
   Template.body.rendered = ->
