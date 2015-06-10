@@ -1,10 +1,14 @@
 <template name="entries">
     <div class="col-md-6">
         <div class="page-header">
-            <h1>Journal Entries</h1>
+            {{#if isNewEntry}}
+                <h1>New Journal Entry</h1>
+            {{else}}
+                <h1>Journal Entry For {{entry_date}}</h1>
+            {{/if}}
         </div>
         {{#if currentUser}}
-            {{> entry_form}}
+            {{> entry_form this}}
         {{else}}
             <p>Please log-in to post a journal entry.</p>
         {{/if}}
@@ -26,4 +30,8 @@
             </p>
         {{/if}}
     </div>
+</template>
+
+<template name="entry">
+    <li><a href="/entry/{{slashToDash entry_date}}">{{entry_date}}</a></li>
 </template>

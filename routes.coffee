@@ -12,9 +12,13 @@ if Meteor.isClient
     @render 'Analysis'
     return
 
-  Router.route 'entry/:entryDate', (->
-    params = @params
-    @render 'entries', data: ->
-      Entries.findOne entry_date: params.entryDate.replace(/-/g,'/')
-    return
-  ), name: 'entry'
+  Router.route 'entry/:entryDate',
+    action: ->
+      params = @params
+      @render 'entries', data: ->
+        Entries.findOne(
+          entry_date: params.entryDate.replace /-/g,'/'
+          owner: Meteor.userId()
+        )
+      return
+    name: 'entry'

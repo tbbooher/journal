@@ -73,7 +73,7 @@
         <div class="control-group text optional">
             <label class="text optional control-label" for="memory_verse">Memory verse</label>
             <div class="controls">
-                <textarea class="form-control optional" id="memory_verse" name="memory_verse" rows="5">Eph 3:20-21 Now to him who is able to do immeasurably more than all we ask or imagine, according to his power that is at work within us, to him be glory in the church and in Christ Jesus throughout all generations, for ever and ever!</textarea>
+                <textarea class="form-control optional" id="memory_verse" name="memory_verse" rows="5" placeholder="{{#if isNewEntry}}Eph 3:20-21 Now to him who is able to do immeasurably more than all we ask or imagine, according to his power that is at work within us, to him be glory in the church and in Christ Jesus throughout all generations, for ever and ever!{{/if}}"></textarea>
             </div>
         </div>
 
@@ -186,8 +186,7 @@
         </div>
 
         <div class="form-actions">
-            <input class="btn btn btn-primary" name="commit" type="submit" value="Create Journal entry">
-            <input class="btn btn" id="update-button" name="commit" type="button" value="save">
+            <input class="btn btn btn-primary" name="commit" type="submit" value={{#if isNewEntry}}Create entry{{else}}Save entry{{/if}}>
             <a href="/journal_entries" class="btn">Cancel</a>
         </div>
     </form>
