@@ -1,5 +1,7 @@
 Template.entry_form.rendered = ->
-  $('#entry_date').datepicker()
+  $('#entry_date').datepicker(
+    orientation: "top left"
+  )
   return
 
 # todo: should use simple-schema module
