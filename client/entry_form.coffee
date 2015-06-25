@@ -23,7 +23,9 @@ entrySchema = [
   'flossed'
   'workout'
   'problem_attempted'
-  'problem_solved'
+  'problem_solved',
+  'workout_done',
+  'problem_of_the_day'
 # at_work,at_home,at_home_pc,someday_maybe,blog_post_ideas,facepicking
 ]
 
@@ -33,8 +35,8 @@ Template.entry_form.onRendered ->
   @autorun =>
     data = Template.currentData()
     if data?.entry_date
-      for fieldName, fieldVal of data
-        @$("[name=#{fieldName}]").val fieldVal
+      for fieldName in entrySchema
+        @$("[name=#{fieldName}]").val data[fieldName]
     else
       @$("form")[0].reset()
 
