@@ -10,6 +10,6 @@ insecure
 coffeescript
 twbs:bootstrap
 rajit:bootstrap3-datepicker
-accounts-google
 accounts-ui
 iron:router
+accounts-password
