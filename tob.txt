@@ -1,0 +1,65 @@
+trail of bits
+
+they use fuzzing and symbolic execution in a feedback loop to find bugs. 
+
+split bundle into CBs and PCAP, which th
+
+minset is the minimum set of inputs fro maximum branch coverage and provides a source of "valid" inputs for RB selection, and feeds the fuzzer and concolic execution.
+
+they have several methods for bug finding:
+fuzzing
+symbolic execution
+concolic execution
+crash detection (accuracy is super-important here)
+
+their main fuzzer is grr -- based on grainary -- which gathers branch coverage and ensures crash location detection.
+
+it has multiple mutation strategies: radamsa, repeater, bit flippers, and reorder
+
+inputs are provided by minset, PCAPs, strings and preset values
+
+feedback loop then re-fuzzes outputs
+
+ncp = new crash processor, it provides one place to verify that the input crashes the binary. filters out false positives. which is one canoncial source to verify that this pov is real.
+
+grrplay is cpu bound . . . the more cpus implies the more fuzz coverage per unit of time.
+
+fuzzer innovations . . . dynamic binary tranlation of muttlipel 32 bit cb in the same 64 bit address space
+
+does process snapshotting, which can resume programs from arbitrary state
+
+the persistent code cache gets lazily optimized
+
+if you find a better way to mutate inputs. they always snapshot at the beginning state, and worked off this.
+
+they use two symbolic execution engines -- KLEE runs on LLVM bitcode and PySymEmu runs on original CBs -- which supports multi-CB challenges
+
+this allows for each one to run on a different representation of the same program. this has been very helpful. PySymEmu supports multi-CB challenges. 
+
+pcap procing -- was terrible. minset populated by PCAPS, fuzer
+
+klee is a mature part of the llvm project. likely only ever tested on clang-generated bitcode. but they had a lot of problems, such as odd-sized integers, vectors, and several other bugs.
+still worked for a few challenge binaries
+
+PSE. A symbolic execution tool, capable of automatically generating interesting inputs for x86/x64 binary programs.
+
+with four main components: cup, memory decree and dolver
+
+uses SMT solver Z3 . . .memory cells can hold concrete or symbolic bytes.
+
+they updated PSE to be able to symbolically execute CGC binaries adn support multi-challenge CBs
+generates PoVs with <var> sections
+
+can start with concrete inputs to operate in concolic execution mode
+
+== patch
+
+the translation to llvm enables them to re-emit RBs as DECREE binaries
+
+optimization -- performance requirements are hard and they use a scoring algorithm to determine the fastest RB
+
+MC-Semantics (or mcsema, pronounced 'em see se ma') is a library for translating the semantics of native code to LLVM IR. McSema support translation of x86 machine code, including integer, floating point, and SSE instructions. Control flow recovery is separated from translation, permitting the use of custom control flow recovery front-ends. Code for McSema is open-source and licensed under BSD3.
+
+all are authors.
+
+they take the original binary -- prune the emitted llvms as much as they can -- llvm is a load-store architecture. memory access has to be explicit. they can detect any invalid access. they can do bug-based patching. and there is generic patching. 
