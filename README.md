@@ -1,3 +1,5 @@
 # journal
 
-http://betterman.meteor.com/
+https://improvement.rocks/
+
+this is all about being better.

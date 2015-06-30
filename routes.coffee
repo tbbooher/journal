@@ -17,7 +17,7 @@ if Meteor.isClient
       params = @params
       @render 'entries', data: ->
         Entries.findOne(
-          entry_date: params.entryDate #.replace /-/g,'/'
+          entry_date: params.entryDate.replace /-/g,'/'
           owner: Meteor.userId()
         )
       return
