@@ -2,4 +2,4 @@
 
 https://improvement.rocks/
 
-this is all about being better.
+this is all about being better, together.
