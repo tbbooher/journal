@@ -1,4 +1,5 @@
 # todo: should use simple-schema and autoform modules
+# agreed
 entrySchema = [
 # owner (to simplify working with the form the user isn't included here)
   'entry_date'
