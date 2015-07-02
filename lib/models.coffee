@@ -2,6 +2,8 @@ root = exports ? this  # the global context
 
 root.Entries = new (Mongo.Collection)('entries')
 
+# would like to autogenerate a form from this . . .
+
 Schemas.Entry = new SimpleSchema
   entry_date:
     type: Date
@@ -24,7 +26,11 @@ Schemas.Entry = new SimpleSchema
   memory_verse:
     type: String
     label: 'Memory Verse'
-    max: 500  
+    max: 500
+  workout_done:
+    type: String
+    label: 'Friends'
+    max: 500    
   # daily scores (integers)
   purity:
     type: Number
@@ -68,47 +74,43 @@ Schemas.Entry = new SimpleSchema
   workout:
     type: Boolean
   # next action lists (I think we delete these)
-  workout_done:
-    type: String
-    label: 'Friends'
-    max: 200
-  friends:
-    type: String
-    label: 'Friends'
-    max: 200
-  goals:
-    type: String
-    label: 'goals'
-    max: 200
-  networking:
-    type: String
-    label: 'networking'
-    max: 200
-  to_read:
-    type: String
-    label: 'to_read'
-    max: 200
-  at_home:
-    type: String
-    label: 'at_home'
-    max: 200
-  at_home_pc:
-    type: String
-    label: 'at_home_pc'
-    max: 200
-  at_work:
-    type: String
-    label: 'at_work'
-    max: 200
-  blog_post_ideas:
-    type: String
-    label: 'blog_post_ideas'
-    max: 200
-  someday_maybe:
-    type: String
-    label: 'someday_maybe'
-    max: 200
-  problem_of_the_day:
-    type: String
-    label: 'problem_of_the_day'
-    max: 200
+#  friends:
+#    type: String
+#    label: 'Friends'
+#    max: 200
+#  goals:
+#    type: String
+#    label: 'goals'
+#    max: 200
+#  networking:
+#    type: String
+#    label: 'networking'
+#    max: 200
+#  to_read:
+#    type: String
+#    label: 'to_read'
+#    max: 200
+#  at_home:
+#    type: String
+#    label: 'at_home'
+#    max: 200
+#  at_home_pc:
+#    type: String
+#    label: 'at_home_pc'
+#    max: 200
+#  at_work:
+#    type: String
+#    label: 'at_work'
+#    max: 200
+#  blog_post_ideas:
+#    type: String
+#    label: 'blog_post_ideas'
+#    max: 200
+#  someday_maybe:
+#    type: String
+#    label: 'someday_maybe'
+#    max: 200
+#  problem_of_the_day:
+#    type: String
+#    label: 'problem_of_the_day'
+#    max: 200
