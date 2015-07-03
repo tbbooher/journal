@@ -4,78 +4,139 @@ root.Entries = new (Mongo.Collection)('entries')
 
 # would like to autogenerate a form from this . . .
 
-#Schemas = {}
-#
-#Schemas.Entry = new SimpleSchema(
-#  entry_date:
-#    type: Date
-#    label: 'Date'
-#    optional: false
-#  # TODO: how do we score this -- bson id???
-#  owner:
-#    type: String  # ??
-#    label: 'owner'
-#    max: 200
-#  # text fields
-#  description:
-#    type: String
-#    label: 'Description'
-#    max: 1000
-#  friends_in_focus:
-#    type: String
-#    label: 'Friends in focus'
-#    max: 500
-#  memory_verse:
-#    type: String
-#    label: 'Memory Verse'
-#    max: 500
-#  workout_done:
-#    type: String
-#    label: 'Friends'
-#    max: 500    
-#  # daily scores (integers)
-#  purity:
-#    type: Number
-#    min: 0
-#    max: 5
-#  devotional:
-#    type: Number
-#    min: 0
-#    max: 5
-#  discipline:
-#    type: Number
-#    min: 0
-#    max: 5
-#  fitness:
-#    type: Number
-#    min: 0
-#    max: 5
-#  wife:
-#    type: Number
-#    min: 0
-#    max: 5
-#  relational:
-#    type: Number
-#    min: 0
-#    max: 5
-#  stress:
-#    type: Number
-#    min: 0
-#    max: 5
-#  # checkboxes: Workout   Prob attempt   Prob Solved   Flossed   Sick   No Discip
-#  flossed:
-#    type: Boolean
-#  sick:
-#    type: Boolean
-#  problem_solved:
-#    type: Boolean
-#  problem_attempted:
-#    type: Boolean
-#  lack_of_discipline:
-#    type: Boolean
-#  workout:
-#    type: Boolean)
-#  
+Schemas = {}
+
+Schemas.Entry = new SimpleSchema(
+  entry_date:
+    type: Date
+    autoform:
+      type: "bootstrap-datepicker"
+    label: 'Date'
+    optional: false
+    index: 1
+    unique: true
+  # TODO: how do we score this -- bson id???
+  owner:
+    type: String
+    label: 'owner'
+  # text fields
+  description:
+    type: String
+    autoform:
+      type: 'textarea'
+      rows: 5
+    label: 'Description'
+    max: 1000
+    optional: true
+  friends_in_focus:
+    type: String
+    label: 'Friends in Focus'
+    max: 500
+    optional: true
+  memory_verse:
+    type: String
+    label: 'Memory Verse'
+    max: 500
+    optional: true
+  workout_done:
+    type: String
+    label: 'Friends'
+    max: 500
+    optional: true
+  # daily score slider fields (integers)
+  purity:
+    type: Number
+    min: 0
+    max: 5
+    optional: true
+    autoform:
+      type: 'range'
+      step: 1
+      min: 1
+      max: 5
+  devotional:
+    type: Number
+    min: 0
+    max: 5
+    optional: true
+    autoform:
+      type: 'range'
+      step: 1
+      min: 1
+      max: 5
+  discipline:
+    type: Number
+    min: 0
+    max: 5
+    optional: true
+    autoform:
+      type: 'range'
+      step: 1
+      min: 1
+      max: 5
+  fitness:
+    type: Number
+    min: 0
+    max: 5
+    optional: true
+    autoform:
+      type: 'range'
+      step: 1
+      min: 1
+      max: 5
+  wife:
+    type: Number
+    min: 0
+    max: 5
+    optional: true
+    autoform:
+      type: 'range'
+  relational:
+    type: Number
+    min: 0
+    max: 5
+    optional: true
+    autoform:
+      type: 'range'
+      step: 1
+      min: 1
+      max: 5
+  stress:
+    type: Number
+    min: 0
+    max: 5
+    optional: true
+    autoform:
+      type: 'range'
+      step: 1
+      min: 1
+      max: 5
+  # checkboxes: Workout   Prob attempt   Prob Solved   Flossed   Sick   No Discip
+  flossed:
+    type: Boolean
+    optional: true
+  sick:
+    type: Boolean
+    optional: true
+  problem_solved:
+    type: Boolean
+    optional: true
+  problem_attempted:
+    type: Boolean
+    optional: true
+  lack_of_discipline:
+    type: Boolean
+    optional: true
+  workout:
+    type: Boolean
+    optional: true
+  # optional
+  createdAt:
+    type: Date,
+    denyUpdate: true)
+
+Entries.attachSchema(Schemas.Entry);
+  
   # next action lists (I think we delete these)
   #  friends:
   #    type: String

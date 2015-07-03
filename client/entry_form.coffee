@@ -1,34 +1,4 @@
 # todo: should use simple-schema and autoform modules
-# agreed
-entrySchema = [
-# owner (to simplify working with the form the user isn't included here)
-  'entry_date'
-  'description'
-  'friends'
-  'networking'
-  'consulting'
-  'to_read'
-  'goals'
-  'memory_verse'
-  'purity'
-  'fitness'
-  'devotional'
-  'wife'
-  'relational'
-  'discipline'
-  'stress'
-  'friends_in_focus'
-  'health_statement'
-  'lack_of_discipline'
-  'sick'
-  'flossed'
-  'workout'
-  'problem_attempted'
-  'problem_solved',
-  'workout_done',
-  'problem_of_the_day'
-# at_work,at_home,at_home_pc,someday_maybe,blog_post_ideas,facepicking
-]
 
 Template.entry_form.onRendered ->
   $('#entry_date').datepicker orientation: "top left"

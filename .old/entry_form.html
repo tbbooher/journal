@@ -1,0 +1,193 @@
+<template name="entry_form">
+    <form id="journal_entry_form">
+
+        <div class="control-group text optional">
+            <label class="text optional control-label" for="entry_date">Date</label>
+            <div class="controls">
+                <input type="text" class="form-control" id="entry_date" name="entry_date">
+            </div>
+        </div>
+
+
+        <div class="control-group text optional"><label class="text optional control-label" for="description">Description</label>
+            <div class="controls">
+                <textarea class="form-control" id="description" name="description" rows="10"></textarea>
+            </div>
+        </div>
+
+        <div class="control-group text optional">
+            <label class="text optional control-label" for="description">Next Action Lists</label>
+            <div class="controls">
+                <ul class="nav nav-pills" id="tab">
+                    <li class="active">
+                        <a data-toggle="pill" href="#friends">Friends</a>
+                    </li>
+                    <li>
+                        <a data-toggle="pill" href="#networking">Networking</a>
+                    </li>
+                    <li>
+                        <a data-toggle="pill" href="#consulting">Consulting</a>
+                    </li>
+                    <li>
+                        <a data-toggle="pill" href="#to_read">To Read</a>
+                    </li>
+                    <li>
+                        <a data-toggle="pill" href="#goals">Goals</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="work">
+                        <textarea class="form-control optional" id="at_work" name="at_work" rows="5"></textarea>
+                    </div>
+                    <div class="tab-pane" id="home">
+                        <textarea class="form-control optional" id="at_home" name="at_home" rows="5"></textarea>
+                    </div>
+                    <div class="tab-pane" id="home_pc">
+                        <textarea class="form-control optional" id="at_home_pc" name="at_home_pc" rows="5"></textarea>
+                    </div>
+                    <div class="tab-pane" id="someday_maybe">
+                        <textarea class="form-control optional" id="someday_maybe" name="someday_maybe" rows="5"></textarea>
+                    </div>
+                    <div class="tab-pane" id="blog_post_ideas">
+                        <textarea class="form-control optional" id="blog_post_ideas" name="blog_post_ideas" rows="5"></textarea>
+                    </div>
+                    <div class="tab-pane" id="friends">
+                        <textarea class="form-control optional" id="friends" name="friends" rows="5"></textarea>
+                    </div>
+                    <div class="tab-pane" id="networking">
+                        <textarea class="form-control optional" id="networking" name="networking" rows="5"></textarea>
+                    </div>
+                    <div class="tab-pane" id="consulting">
+                        <textarea class="form-control optional" id="consulting" name="consulting" rows="5"></textarea>
+                    </div>
+                    <div class="tab-pane" id="to_read">
+                        <textarea class="form-control optional" id="to_read" name="to_read" rows="5"></textarea>
+                    </div>
+                    <div class="tab-pane" id="goals">
+                        <textarea class="form-control optional" id="goals" name="goals" rows="5"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="control-group text optional">
+            <label class="text optional control-label" for="memory_verse">Memory verse</label>
+            <div class="controls">
+                <textarea class="form-control optional" id="memory_verse" name="memory_verse" rows="5" placeholder="{{#if isNewEntry}}Eph 3:20-21 Now to him who is able to do immeasurably more than all we ask or imagine, according to his power that is at work within us, to him be glory in the church and in Christ Jesus throughout all generations, for ever and ever!{{/if}}"></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="control-group range optional">
+                    <label class="range optional control-label" for="purity">Purity (high is pure)</label>
+                    <div class="controls"><input class="numeric range optional" id="purity" max="5" min="1" name="purity" step="0.25" type="range"></div>
+                </div>
+
+                <div class="control-group range optional">
+                    <label class="range optional control-label" for="fitness">Fitness</label>
+                    <div class="controls">
+                        <input class="numeric range optional" id="fitness" max="5" min="1" name="fitness" step="0.25" type="range">
+                    </div>
+                </div>
+
+                <div class="control-group range optional">
+                    <label class="range optional control-label" for="devotional">Devotional</label>
+                    <div class="controls">
+                        <input class="numeric range optional" id="devotional" max="5" min="1" name="devotional" step="0.25" type="range">
+                    </div>
+                </div>
+
+                <div class="control-group range optional">
+                    <label class="range optional control-label" for="wife">Wife</label>
+                    <div class="controls">
+                        <input class="numeric range optional" id="wife" max="5" min="1" name="wife" step="0.25" type="range">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="control-group range optional">
+                    <label class="range optional control-label" for="relational">Relational</label>
+                    <div class="controls">
+                        <input class="numeric range optional" id="relational" max="5" min="1" name="relational" step="0.25" type="range">
+                    </div>
+                </div>
+
+                <div class="control-group range optional">
+                    <label class="range optional control-label" for="discipline">Discipline</label>
+                    <div class="controls">
+                        <input class="numeric range optional" id="discipline" max="5" min="1" name="discipline" step="0.25" type="range">
+                    </div>
+                </div>
+
+                <div class="control-group range optional">
+                    <label class="range optional control-label" for="stress">Stress</label>
+                    <div class="controls">
+                        <input class="numeric range optional" id="stress" max="5" min="1" name="stress" step="0.25" type="range">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="control-group string optional">
+            <label class="string optional control-label" for="friends_in_focus">Friends in focus</label>
+            <div class="controls">
+                <input class="form-control optional" id="friends_in_focus" name="friends_in_focus" size="50" type="text">
+            </div>
+        </div>
+
+        <div class="control-group string optional">
+            <label class="string optional control-label" for="health_statement">Health statement</label>
+
+            <div class="controls">
+                <input class="form-control optional" id="health_statement" name="health_statement" size="50" type="text">
+            </div>
+        </div>
+
+        <div class="control-group boolean optional">
+            <label class="boolean optional control-label" for="problem_attempted">Checkboxes</label>
+            <div class="controls">
+                <div class="controls"><input name="workout" type="hidden" value="0">
+                    <label class="checkbox-inline">
+                        <input class="boolean optional" id="workout" name="workout" type="checkbox" value="1"> Workout
+                    </label>
+                    <label class="checkbox-inline">
+                        <input class="boolean optional" id="problem_attempted" name="problem_attempted" type="checkbox" value="1">Prob attempt
+                    </label>
+                    <label class="checkbox-inline">
+                        <input class="boolean optional" id="problem_solved" name="problem_solved" type="checkbox" value="1"> Prob Solved
+                    </label>
+                    <label class="checkbox-inline">
+                        <input class="boolean optional" id="flossed" name="flossed" type="checkbox" value="1"> Flossed
+                    </label>
+                    <label class="checkbox-inline">
+                        <input class="boolean optional" id="sick" name="sick" type="checkbox" value="1"> Sick
+                    </label>
+                    <label class="checkbox-inline">
+                        <input class="boolean optional" id="lack_of_discipline" name="lack_of_discipline" type="checkbox" value="1"> No Discip
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="control-group text optional">
+            <label class="text optional control-label" for="workout_done">Workout done</label>
+            <div class="controls">
+                <textarea class="form-control optional" id="workout_done" name="workout_done" rows="5" style="height:100px;"></textarea>
+            </div>
+        </div>
+
+        <div class="control-group text optional">
+            <label class="text optional control-label" for="problem_of_the_day">Technical Work Done</label>
+            <div class="controls">
+                <textarea class="form-control optional" id="problem_of_the_day" name="problem_of_the_day" rows="5" style="height:100px;"></textarea>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <input class="btn btn btn-primary" name="commit" type="submit" value={{#if isNewEntry}}Create entry{{else}}Save entry{{/if}}>
+            <a href="/journal_entries" class="btn">Cancel</a>
+        </div>
+    </form>
+</template>
