@@ -12,8 +12,14 @@ Schemas.Entry = new SimpleSchema(
     autoform:
       type: "bootstrap-datepicker"
     label: 'Date'
+    autoValue: ->
+      if @isInsert
+        return new Date
+      else
+        @unset()
+      return
     optional: false
-    index: 1
+    index: -1
     unique: true
   # TODO: how do we score this -- bson id???
   owner:
