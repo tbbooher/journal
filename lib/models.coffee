@@ -10,8 +10,12 @@ Schemas.Entry = new SimpleSchema(
   entry_date:
     type: Date
     autoform:
-      type: "bootstrap-datepicker"
-      id: 'entry_date'
+      type: 'bootstrap-datepicker'
+      id: 'entry_date_id'
+      datePickerOptions:
+        orientation: 'top left'
+        autoclose: true
+        todayHighlight: true  
     label: 'Date'
     optional: false
     index: -1
@@ -22,6 +26,7 @@ Schemas.Entry = new SimpleSchema(
     label: 'owner'
     autoform:
       id: 'owner'
+      type: 'hidden'
   # text fields
   description:
     type: String

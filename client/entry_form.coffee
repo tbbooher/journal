@@ -1,15 +1,11 @@
 # todo: should use simple-schema and autoform modules
 
+#Template.entry_form.onCreated ->
+
 Template.entry_form.onRendered ->
   $("#owner").val(Meteor.userId())
-  $("#entry_date").datepicker 'update', new Date
-  $("#entry_date").datepicker
-    orientation: "top left"
-    todayHighlight: true
-    calendarWeeks: true
-    autoclose: true
-  $("#entry_date").datepicker({calendarWeeks: true});
-  
+  $("#entry_date_id").datepicker 'update', new Date
+
 #entrySchema = ['entry_date',  'description',  'friends_in_focus',  'memory_verse',  'workout_done',  'purity',  'devotional',  'discipline',  'fitness',  'wife',  'relational',  'stress',  'flossed',  'sick',  'problem_solved',  'problem_attempted',  'lack_of_discipline',  'workout']
 
 #@autorun =>
