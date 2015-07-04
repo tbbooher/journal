@@ -1,16 +1,16 @@
 # todo: should use simple-schema and autoform modules
 
 Template.entry_form.onRendered ->
-  dt = '7/3/2015' # this is the _worse_ way to do this . . . would like to use autoValue from collections2
-  console.log dt
-  $("#entry_date").val(dt)
   $("#owner").val(Meteor.userId())
+  $("#entry_date").datepicker 'update', new Date
   $("#entry_date").datepicker
     orientation: "top left"
+    todayHighlight: true
     calendarWeeks: true
     autoclose: true
+  $("#entry_date").datepicker({calendarWeeks: true});
   
-entrySchema = ['entry_date',  'description',  'friends_in_focus',  'memory_verse',  'workout_done',  'purity',  'devotional',  'discipline',  'fitness',  'wife',  'relational',  'stress',  'flossed',  'sick',  'problem_solved',  'problem_attempted',  'lack_of_discipline',  'workout']
+#entrySchema = ['entry_date',  'description',  'friends_in_focus',  'memory_verse',  'workout_done',  'purity',  'devotional',  'discipline',  'fitness',  'wife',  'relational',  'stress',  'flossed',  'sick',  'problem_solved',  'problem_attempted',  'lack_of_discipline',  'workout']
 
 #@autorun =>
 #  data = Template.currentData()
