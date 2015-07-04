@@ -142,9 +142,22 @@ Schemas.Entry = new SimpleSchema(
     type: Boolean
     optional: true
   # optional
+  updatedAt:
+    type: Date
+    autoValue: ->
+      return new Date if @isUpdate
+    denyInsert: true
+    optional: true  
   createdAt:
     type: Date,
-    denyUpdate: true)
+    autoValue: ->
+      if @isInsert
+        return new Date
+      else if @isUpsert
+        return { $setOnInsert: new Date }
+      else
+        @unset()
+      return)
 
 Entries.attachSchema(Schemas.Entry);
   
