@@ -20,6 +20,8 @@ Schemas.Entry = new SimpleSchema(
   owner:
     type: String
     label: 'owner'
+    autoform:
+      id: 'owner'
   # text fields
   description:
     type: String

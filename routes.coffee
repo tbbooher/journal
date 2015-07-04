@@ -11,6 +11,11 @@ if Meteor.isClient
   Router.route '/analysis', ->
     @render 'Analysis'
     return
+  
+#  Router.configure
+#    notFoundTemplate: 'not_found'
+#    loadingTemplate: 'loading'
+#    layoutTemplate: 'layout'  
 
   Router.route 'entry/:entryDate',
     action: ->
