@@ -1,28 +1,39 @@
 <template name="entry_form">
+  
 <!--  {{> quickForm id="insertEntryForm" doc=this collection="Entries" type="update"}}-->
-  {{#autoForm id="insertEntryForm" doc=this collection="Entries" type="update"}}
+  {{#autoForm id="journal_entry_form" doc=this collection="Entries" type="update"}}
+    <fieldset>
     {{> afQuickField name="entry_date"}}
-    {{> afQuickField name="owner"}}
     {{> afQuickField name="description"}}
     {{> afQuickField name="friends_in_focus"}}
     {{> afQuickField name="memory_verse"}}
     {{> afQuickField name="workout_done"}}
-    {{> afQuickField name="purity"}}
-    {{> afQuickField name="devotional"}}
-    {{> afQuickField name="discipline"}}
-    {{> afQuickField name="fitness"}}
-    {{> afQuickField name="wife"}}
-    {{> afQuickField name="relational"}}
-    {{> afQuickField name="stress"}}
+    <!-- sliders -->
+    <div class="row">
+      <div class="col-md-6">
+        {{> afQuickField name="purity"}}
+        {{> afQuickField name="devotional"}}
+        {{> afQuickField name="discipline"}}
+        {{> afQuickField name="fitness"}}
+      </div>
+      <div class="col-md-6">
+        {{> afQuickField name="wife"}}
+        {{> afQuickField name="relational"}}
+        {{> afQuickField name="stress"}}
+      </div>
+    </div>
+    <!-- checkboxes -->
     {{> afQuickField name="flossed"}}
     {{> afQuickField name="sick"}}
     {{> afQuickField name="problem_solved"}}
     {{> afQuickField name="problem_attempted"}}
     {{> afQuickField name="lack_of_discipline"}}
     {{> afQuickField name="workout"}}
-    <div class="form-group">
+    </fieldset>
+    <div class="form-actions">
       <button type="submit" class="btn btn-primary" disabled="{{disableButtons}}">Submit</button>
       <button type="reset" class="btn btn-default" disabled="{{disableButtons}}">Reset Form</button>
     </div>
   {{/autoForm}}
+  
 </template>

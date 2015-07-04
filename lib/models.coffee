@@ -11,16 +11,11 @@ Schemas.Entry = new SimpleSchema(
     type: Date
     autoform:
       type: "bootstrap-datepicker"
+      id: 'entry_date'
     label: 'Date'
-    autoValue: ->
-      if @isInsert
-        return new Date
-      else
-        @unset()
-      return
     optional: false
     index: -1
-    unique: true
+    unique: true  
   # TODO: how do we score this -- bson id???
   owner:
     type: String
@@ -60,6 +55,7 @@ Schemas.Entry = new SimpleSchema(
       step: 1
       min: 1
       max: 5
+      value: 3
   devotional:
     type: Number
     min: 0
@@ -70,6 +66,7 @@ Schemas.Entry = new SimpleSchema(
       step: 1
       min: 1
       max: 5
+      value: 3
   discipline:
     type: Number
     min: 0
@@ -80,7 +77,19 @@ Schemas.Entry = new SimpleSchema(
       step: 1
       min: 1
       max: 5
+      value: 3
   fitness:
+    type: Number
+    min: 1
+    max: 5
+    optional: true
+    autoform:
+      type: 'range'
+      step: 1
+      min: 1
+      max: 5
+      value: 3
+  wife:
     type: Number
     min: 0
     max: 5
@@ -90,13 +99,7 @@ Schemas.Entry = new SimpleSchema(
       step: 1
       min: 1
       max: 5
-  wife:
-    type: Number
-    min: 0
-    max: 5
-    optional: true
-    autoform:
-      type: 'range'
+      value: 3  
   relational:
     type: Number
     min: 0
@@ -107,6 +110,7 @@ Schemas.Entry = new SimpleSchema(
       step: 1
       min: 1
       max: 5
+      value: 3
   stress:
     type: Number
     min: 0
@@ -117,6 +121,7 @@ Schemas.Entry = new SimpleSchema(
       step: 1
       min: 1
       max: 5
+      value: 3
   # checkboxes: Workout   Prob attempt   Prob Solved   Flossed   Sick   No Discip
   flossed:
     type: Boolean
